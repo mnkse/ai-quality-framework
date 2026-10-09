@@ -63,4 +63,21 @@ class AnswerEvaluator:
             store=False,
         )
 
-        return json.loads(response.output_text)
+        try:
+            result = json.loads(response.output_text)
+        except json.JSONDecodeError as error:
+            raise ValueError("Judge returned invalid JSON.") from error
+
+        if not isinstance(result, dict):
+            raise ValueError("Judge output must be an object.")
+
+        if set(result) != {"passed", "reason"}:
+            raise ValueError("Judge output must contain passed and reason only.")
+
+        if type(result["passed"]) is not bool:
+            raise ValueError("Judge passed must be a boolean.")
+
+        if not isinstance(result["reason"], str) or not result["reason"].strip():
+            raise ValueError("Judge reason must be non-empty text.")
+
+        return result
