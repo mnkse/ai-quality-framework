@@ -1,7 +1,7 @@
 import pytest
 
-from evaluator import AnswerEvaluator
-from rag_client import RAGClient
+from ai_quality.evaluators.llm_judge import AnswerEvaluator
+from ai_quality.clients.rag_client import RAGClient
 
 
 @pytest.mark.parametrize(

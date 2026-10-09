@@ -5,7 +5,7 @@ import pytest
 
 @pytest.fixture
 def ai_client(request):
-    from ai_client import AIClient
+    from ai_quality.clients.llm_client import AIClient
 
     if request.node.get_closest_marker("live"):
         mode = "live"

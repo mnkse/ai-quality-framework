@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 
 import pytest
-from evaluator import AnswerEvaluator
+from ai_quality.evaluators.llm_judge import AnswerEvaluator
 
 
 PROJECT_ROOT = Path(__file__).resolve().parents[1]

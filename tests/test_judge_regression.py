@@ -1,4 +1,4 @@
-from evaluator import AnswerEvaluator
+from ai_quality.evaluators.llm_judge import AnswerEvaluator
 
 
 def test_judge_accepts_clear_return_refusal():

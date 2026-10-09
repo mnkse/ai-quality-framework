@@ -1,5 +1,5 @@
 import pytest
-from evaluator import AnswerEvaluator
+from ai_quality.evaluators.llm_judge import AnswerEvaluator
 
 
 @pytest.fixture(scope="module")

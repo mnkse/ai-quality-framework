@@ -1,5 +1,5 @@
-from evaluator import AnswerEvaluator
-from rag_client import RAGClient
+from ai_quality.evaluators.llm_judge import AnswerEvaluator
+from ai_quality.clients.rag_client import RAGClient
 
 
 def test_rag_ignores_document_injection(monkeypatch):

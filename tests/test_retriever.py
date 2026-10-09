@@ -1,5 +1,5 @@
 import pytest
-from retriever import DocumentRetriever
+from ai_quality.retrieval.document_retriever import DocumentRetriever
 
 pytestmark = pytest.mark.offline
 
