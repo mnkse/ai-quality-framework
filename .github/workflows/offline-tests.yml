@@ -1,0 +1,31 @@
+name: Offline retrieval tests
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  retrieval:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Install offline test dependencies
+        run: python -m pip install pytest pytest-html
+      - name: Run retrieval tests
+        run: |
+          mkdir -p reports
+          python -m pytest tests/test_retriever.py -v --html=reports/retrieval.html --self-contained-html
+      - name: Upload HTML report
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: retrieval-test-report
+          path: reports/retrieval.html
+          if-no-files-found: warn
