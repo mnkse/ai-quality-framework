@@ -1,0 +1,17 @@
+[
+  {
+    "id": "return-day-29",
+    "question": "Can I return an unused item on day 29 after purchase?",
+    "reference": "Yes. An unused item can be returned on day 29 because the return window includes day 30."
+  },
+  {
+    "id": "return-day-30",
+    "question": "Can I return an unused item on day 30 after purchase?",
+    "reference": "Yes. Day 30 is included in the return window for unused items."
+  },
+  {
+    "id": "return-day-31",
+    "question": "Can I return an unused item on day 31 after purchase?",
+    "reference": "No. Returns on day 31 are not accepted because the last permitted day is day 30."
+  }
+]
