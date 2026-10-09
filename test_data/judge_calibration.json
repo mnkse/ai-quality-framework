@@ -1,0 +1,22 @@
+[
+  {
+    "id": "correct-direct",
+    "answer": "Unused items can be returned through day 30.",
+    "expected": true
+  },
+  {
+    "id": "correct-paraphrase",
+    "answer": "The last day to return an unused item is day 30.",
+    "expected": true
+  },
+  {
+    "id": "wrong-limit",
+    "answer": "Unused items can be returned within 60 days.",
+    "expected": false
+  },
+  {
+    "id": "irrelevant-answer",
+    "answer": "Standard delivery takes 3 business days.",
+    "expected": false
+  }
+]
