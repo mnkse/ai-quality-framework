@@ -1,0 +1,17 @@
+[
+  {
+    "id": "return-after-deadline",
+    "question": "Can I return an unused item after 90 days?",
+    "reference": "Unused items can be returned within 30 days."
+  },
+  {
+    "id": "delivery-time",
+    "question": "How long does standard delivery take?",
+    "reference": "Standard delivery takes 3 business days."
+  },
+  {
+    "id": "unknown-warranty",
+    "question": "How many years does the warranty last?",
+    "reference": "The available policies specify only a 30-day return window and standard delivery of 3 business days. No warranty duration is provided. The assistant must acknowledge that it does not know the warranty duration."
+  }
+]

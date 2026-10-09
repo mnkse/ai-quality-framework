@@ -1,0 +1,17 @@
+[
+  {
+    "id": "return-period",
+    "question": "How many days do I have to return an item?",
+    "expected": "30 days"
+  },
+  {
+    "id": "delivery-time",
+    "question": "How long does standard delivery take?",
+    "expected": "3 business days"
+  },
+  {
+    "id": "unknown-question",
+    "question": "Who is the CEO?",
+    "expected": "I do not know"
+  }
+]
