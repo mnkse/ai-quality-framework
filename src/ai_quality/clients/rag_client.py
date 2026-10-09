@@ -1,6 +1,7 @@
 from ai_quality.config.settings import ENV_FILE
 
 import json
+from time import perf_counter
 from pathlib import Path
 
 from dotenv import dotenv_values
@@ -30,8 +31,10 @@ class RAGClient:
         self.retriever = DocumentRetriever()
 
     def get_answer(self, question):
+        started = perf_counter()
         documents = self.retriever.retrieve(question)
 
+        api_started = perf_counter()
         response = self.client.responses.create(
             model=self.model,
             instructions=(
@@ -50,6 +53,7 @@ class RAGClient:
             store=False,
         )
 
+        api_seconds = perf_counter() - api_started
         answer = response.output_text.strip()
 
         if not answer:
@@ -58,4 +62,18 @@ class RAGClient:
         return {
             "answer": answer,
             "documents": documents,
+            "telemetry": {
+                "model": response.model,
+                "total_seconds": perf_counter() - started,
+                "api_seconds": api_seconds,
+                "input_tokens": (
+                    response.usage.input_tokens if response.usage else None
+                ),
+                "output_tokens": (
+                    response.usage.output_tokens if response.usage else None
+                ),
+                "total_tokens": (
+                    response.usage.total_tokens if response.usage else None
+                ),
+            },
         }
