@@ -14,3 +14,8 @@ def test_judge_accepts_clear_return_refusal():
     print(f"Reason: {result['reason']}")
 
     assert result["passed"], result["reason"]
+
+
+import pytest
+
+pytestmark = pytest.mark.live

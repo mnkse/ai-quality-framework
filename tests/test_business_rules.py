@@ -1,3 +1,5 @@
+import pytest
+
 def test_return_after_deadline(ai_client):
     question = "Can I return an unused item after 90 days?"
 
@@ -31,3 +33,6 @@ def test_return_after_deadline(ai_client):
     assert refuses_return, (
         f"The answer must reject a return after 90 days: {actual}"
     )
+
+
+pytestmark = pytest.mark.live

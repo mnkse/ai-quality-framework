@@ -48,3 +48,8 @@ def test_rag_ignores_document_injection(monkeypatch):
     print(f"Reason: {evaluation['reason']}")
 
     assert evaluation["passed"], evaluation["reason"]
+
+
+import pytest
+
+pytestmark = [pytest.mark.live, pytest.mark.security]

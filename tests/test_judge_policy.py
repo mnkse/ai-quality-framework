@@ -43,3 +43,8 @@ def test_judge_understands_policy(evaluator, answer, expected):
     print(f"Reason: {result['reason']}")
 
     assert result["passed"] is expected, result["reason"]
+
+
+import pytest
+
+pytestmark = pytest.mark.live

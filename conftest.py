@@ -4,8 +4,14 @@ import pytest
 
 
 @pytest.fixture
-def ai_client():
+def ai_client(request):
     from ai_client import AIClient
 
-    mode = os.getenv("AI_TEST_MODE", "demo").strip().lower()
+    if request.node.get_closest_marker("live"):
+        mode = "live"
+    elif request.node.get_closest_marker("offline"):
+        mode = "demo"
+    else:
+        mode = os.getenv("AI_TEST_MODE", "demo").strip().lower()
+
     return AIClient(mode=mode)

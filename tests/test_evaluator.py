@@ -34,3 +34,8 @@ def test_evaluator_decision(evaluator, answer, expected_pass):
     print(f"Reason: {result['reason']}")
 
     assert result["passed"] is expected_pass, result["reason"]
+
+
+import pytest
+
+pytestmark = pytest.mark.live

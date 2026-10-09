@@ -46,3 +46,8 @@ def test_rag_return_boundary(case, rag_client, evaluator):
     print(f"Reason: {evaluation['reason']}")
 
     assert evaluation["passed"], evaluation["reason"]
+
+
+import pytest
+
+pytestmark = pytest.mark.live

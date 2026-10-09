@@ -43,3 +43,8 @@ def test_rag_uses_supplied_policy(monkeypatch, return_days):
     print(f"Reason: {evaluation['reason']}")
 
     assert evaluation["passed"], evaluation["reason"]
+
+
+import pytest
+
+pytestmark = pytest.mark.live

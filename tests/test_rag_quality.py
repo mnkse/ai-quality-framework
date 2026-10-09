@@ -60,3 +60,8 @@ def test_rag_unknown_warranty():
     print(f"Reason: {evaluation['reason']}")
 
     assert evaluation["passed"], evaluation["reason"]
+
+
+import pytest
+
+pytestmark = pytest.mark.live

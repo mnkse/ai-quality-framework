@@ -11,3 +11,6 @@ import pytest
 )
 def test_keyword_check_limitation(answer):
     assert "30 days" in answer
+
+
+pytestmark = pytest.mark.offline

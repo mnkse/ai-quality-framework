@@ -30,3 +30,6 @@ def test_answer(case, ai_client):
         f"Expected: {case['expected']}\n"
         f"Actual: {actual}"
     )
+
+
+pytestmark = pytest.mark.live

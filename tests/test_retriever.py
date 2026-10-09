@@ -1,6 +1,8 @@
 import pytest
 from retriever import DocumentRetriever
 
+pytestmark = pytest.mark.offline
+
 
 @pytest.fixture
 def retriever():

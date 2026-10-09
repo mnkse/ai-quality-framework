@@ -44,3 +44,8 @@ def test_answer_quality(case, ai_client, evaluator):
         f"Answer: {actual}\n"
         f"Evaluation: {result['reason']}"
     )
+
+
+import pytest
+
+pytestmark = pytest.mark.live
